@@ -22,7 +22,7 @@ class TetrisApp extends JFrame {
     final int RIGHT = 39;
     final int DOWN = 40;
 
-    final int SHOW_DELAY = 500; // delay for animation
+    int showDelay = 500; // delay for animation
 
     final int[][][] SHAPES = {
             {{0,0,0,0}, {1,1,1,1}, {0,0,0,0}, {0,0,0,0}, {4, 0x00f0f0}}, // I
@@ -90,7 +90,7 @@ class TetrisApp extends JFrame {
     void go() {
         while (!gameOver) {
             try {
-                Thread.sleep(SHOW_DELAY);
+                Thread.sleep(showDelay);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -121,6 +121,14 @@ class TetrisApp extends JFrame {
         if (countFillRows > 0) {
             gameScore += SCORES[countFillRows - 1];
             setTitle(TITLE_OF_PROGRAM + " : " + gameScore);
+            switch (gameScore){
+                case 100: showDelay = showDelay - 100;
+                break;
+                case 200: showDelay = showDelay - 300;
+                break;
+                case 500: showDelay = 500;
+                break;
+            }
 
         }
     }

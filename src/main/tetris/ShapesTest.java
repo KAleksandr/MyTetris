@@ -10,21 +10,21 @@ public class ShapesTest {
 
     @Test
     public void testIsTouchGround() throws Exception {
-        Assert.assertEquals(false,shapes.isTouchGround());
+        Assert.assertFalse(shapes.isTouchGround());
     }
 
     @Test
     public void testIsCrossGround() throws Exception {
-        Assert.assertEquals(false, shapes.isCrossGround());
+        Assert.assertFalse(shapes.isCrossGround());
     }
 
     @Test
     public void testIsTouchWall() throws Exception {
-        Assert.assertEquals(false, shapes.isTouchWall(0));
+        Assert.assertFalse(shapes.isTouchWall(160));
     }
 
     @Test
     public void testIsWrongPosition() throws Exception {
-        Assert.assertEquals(false, shapes.isWrongPosition());
+        Assert.assertFalse(shapes.isWrongPosition());
     }
 }
